@@ -13,6 +13,17 @@ get("/square/results"){
 
   @number = params.fetch("number")
 
-  @square = @number.to_f * @number.to_f
+  @square = @number.to_f ** 2
   erb(:square_results)
+}
+
+get("/square_root/new"){
+  erb(:square_root_form)
+}
+
+get("/square_root/results"){
+  @user_number = params.fetch("user_number")
+
+  @result = @user_number.to_f ** 0.5
+  erb(:square_root_results)
 }
